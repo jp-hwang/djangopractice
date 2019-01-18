@@ -1,4 +1,25 @@
 {% extends "baemin/layput.html" %}
 {% block content %}
     <h3> 가게 목록 </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>가게명</th>
+                <th>전화번호</th>
+                <th>주소</th>
+                <th>주문하기</th>
+            </tr>
+        </thead>
+        <tbody>        
+        {% for shop in shop_list %}
+        <tr>
+            
+            <td>{{ shop.name }}</td>
+            <td>{{ shop.tel }}</td>
+            <td>{{ shop.addr }}</td>
+            <td><a href ="#">주문하기</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>   
+    
 {% endblock %}
