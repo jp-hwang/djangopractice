@@ -21,5 +21,5 @@ urlpatterns = [
     url('admin/', admin.site.urls),
     url('accounts/', include('accounts.urls')),
     url('baemin/', include(('baemin.urls', 'baemin') ,namespace='baemin')),
-    url('', lambda r: redirect('baemin/', name='root')),
+    url('', lambda r: redirect('baemin/'), name='root'),
 ]

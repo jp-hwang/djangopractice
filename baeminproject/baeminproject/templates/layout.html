@@ -5,6 +5,7 @@
         <title>practice</title>
     </head>
     <body>
+        <a href="{% url "root" %}"> HOME </a>
         {% if user.is_authenticated %}
             <a href="{% url "profile" %}"> 프로필 </a>
             <a href="{% url "logout" %}?next={{ request.path }}"> 로그아웃 </a>
