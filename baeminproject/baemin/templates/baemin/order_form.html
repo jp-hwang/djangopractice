@@ -1,0 +1,12 @@
+{% extends "baemin/layout.html" %}
+{% block content %}
+    <h3>{{ shop.name }} 주문</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit"/>
+    </form>
+    
+{% endblock %}

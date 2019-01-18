@@ -1,4 +1,4 @@
-{% extends "baemin/layput.html" %}
+{% extends "baemin/layout.html" %}
 {% block content %}
     <h3> 가게 목록 </h3>
     <table>
@@ -12,12 +12,11 @@
         </thead>
         <tbody>        
         {% for shop in shop_list %}
-        <tr>
-            
+        <tr>            
             <td>{{ shop.name }}</td>
             <td>{{ shop.tel }}</td>
-            <td>{{ shop.addr }}</td>
-            <td><a href ="#">주문하기</a></td>
+            <td>{{ shop.addr }}</td>            
+            <td><a href ="{% url "baemin:order_new" shop.id %}">주문하기</a></td>
         </tr>
         {% endfor %}
         </tbody>   
