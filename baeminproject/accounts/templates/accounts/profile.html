@@ -1,6 +1,23 @@
 {% extends "accounts/layout.html" %}
+{% load humanize %}
 {% block content %}
     <h3>{{ user }} 에 프로필</h3>
 
     <h4> 주문내역 </h4>
+
+    <table>
+        <tbody>
+            {% for order in user.order_set.all  %}
+            <td>{{ order.shop.name }}</td>
+            <td>
+                {% for item  in order.item_set.all %}
+                {{ item.name }}
+                {% endfor %}
+            </td>            
+            <td>{{ order.total|intcomma }}</td>
+            <td>{{ order.created_at }}</td>
+            {% endfor %}
+        </tbody>
+
+    </table>
 {% endblock %}
