@@ -19,7 +19,7 @@ class Item(models.Model):
     price = models.PositiveIntegerField()                # 가격
 
     class Meta:
-        ordering = ('-id',)
+        ordering = ('-id',) # - : 역순
 
     def __str__(self):
         return self.name
