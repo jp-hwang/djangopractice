@@ -18,8 +18,8 @@ from django.contrib import admin
 from django.shortcuts import redirect
 
 urlpatterns = [
-    url(r'^admin/$', admin.site.urls),
-    url(r'^accounts/$', include('accounts.urls')),
-    url(r'^baemin/$', include(('baemin.urls', 'baemin') ,namespace='baemin')),
-    url(r'^$', lambda r: redirect('baemin/'), name='root'),
+    url(r'admin/', admin.site.urls),
+    url(r'accounts/', include('accounts.urls')),
+    url(r'baemin/', include(('baemin.urls', 'baemin') ,namespace='baemin')),
+    url(r'', lambda r: redirect('baemin/'), name='root'),
 ]
